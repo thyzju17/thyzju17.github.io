@@ -6,9 +6,28 @@
     <description>Recent content in Tags on THY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 26 Aug 2019 12:04:40 +0800</lastBuildDate>
     
 	<atom:link href="https://thyzju17.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java</title>
+      <link>https://thyzju17.github.io/tags/java/</link>
+      <pubDate>Mon, 26 Aug 2019 12:04:40 +0800</pubDate>
+      
+      <guid>https://thyzju17.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>selfstudy</title>
+      <link>https://thyzju17.github.io/tags/selfstudy/</link>
+      <pubDate>Mon, 26 Aug 2019 12:04:40 +0800</pubDate>
+      
+      <guid>https://thyzju17.github.io/tags/selfstudy/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
