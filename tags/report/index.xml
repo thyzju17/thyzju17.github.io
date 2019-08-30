@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>THY</title>
-    <link>https://thyzju17.github.io/</link>
-    <description>Recent content on THY</description>
+    <title>report on THY</title>
+    <link>https://thyzju17.github.io/tags/report/</link>
+    <description>Recent content in report on THY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Aug 2019 11:20:25 +0800</lastBuildDate>
     
-	<atom:link href="https://thyzju17.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://thyzju17.github.io/tags/report/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -29,27 +29,6 @@
  图五 左边的没有内部顶点约束，右边有内部顶点的约束 
 &amp;emsp;&amp;emsp;加入内部顶点的约束，以及面积的约束之后，形变确实看上去更加合理了。
 &amp;emsp;&amp;emsp;面积约束理解的还不够透彻，需要再深入的理解。</description>
-    </item>
-    
-    <item>
-      <title>Java相关</title>
-      <link>https://thyzju17.github.io/post/second/</link>
-      <pubDate>Mon, 26 Aug 2019 12:04:40 +0800</pubDate>
-      
-      <guid>https://thyzju17.github.io/post/second/</guid>
-      <description> Java学前小知识点  final修饰变量时，像const char是双字节，可以存一个汉字 String 首字母大写 变量必在用之前初始化，不然报错 原来是虚函数，加final就不是虚函数，原子类相同函数报错 int可以隐式转换成double，但是double不行，需要显式转换(int) boolean只有true false，不是非零与零 Scanner类获取输入 基本数据类型可以直接和String类型相加，结果为String final类不可以被继承（String） 判断两个字符串相等A.equals(B) ==在其中一个是常量的时候可以用（不是final，是对编译器可见的final（声明时可见的初始化），或者直接常量） class的构造函数和C++一样，class没有析构函数  </description>
-    </item>
-    
-    <item>
-      <title>新的开始</title>
-      <link>https://thyzju17.github.io/post/blog/</link>
-      <pubDate>Mon, 26 Aug 2019 10:47:23 +0800</pubDate>
-      
-      <guid>https://thyzju17.github.io/post/blog/</guid>
-      <description>转移到新博客的第一天
-虽然以前在csdn上有一个小博客，但是之前的博客主要是高中信息竞赛训练相关的文章。现在我是大三，成功转到了cs。新的旅途需要一个新的记录，因此选择这样一个新的博客
-特别希望自己能够坚持把博客写下去，做好工作的记录（也包括生活的记录吧）
-作为一个这个方向的萌新，我还缺少很多，所以，希望在接下来的日子里能够慢慢成长起来，不让自己和他失望</description>
     </item>
     
   </channel>

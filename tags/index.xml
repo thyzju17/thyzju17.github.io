@@ -6,10 +6,28 @@
     <description>Recent content in Tags on THY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Aug 2019 12:04:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2019 11:20:25 +0800</lastBuildDate>
     
 	<atom:link href="https://thyzju17.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>report</title>
+      <link>https://thyzju17.github.io/tags/report/</link>
+      <pubDate>Fri, 30 Aug 2019 11:20:25 +0800</pubDate>
+      
+      <guid>https://thyzju17.github.io/tags/report/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRTP</title>
+      <link>https://thyzju17.github.io/tags/srtp/</link>
+      <pubDate>Fri, 30 Aug 2019 11:20:25 +0800</pubDate>
+      
+      <guid>https://thyzju17.github.io/tags/srtp/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Java</title>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Week 2 Report // THY</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://thyzju17.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Week 2 Report"/>
+<meta name="twitter:description" content="报告 2019/8/29/ 23：15
+1 总述 &emsp;&emsp;这几周主要根据论文内容，将原2D Deformation项目的代码进行了修改，删除不可用的第三方包（包括zjucad、hjlib等），代之以矩阵库Eigen，并最终在Win10&#43;vs2017环境下成功运行，运行效果符合个人预期。
+2 详细工作  用Eigen库里的MatrixXd替换了所有的matrix&lt;double&gt;，用SparseMatrix&lt;double&gt;替换了sparse_matrix&lt;double&gt;，并且将所有的函数操作都修改成符合Eigen库的函数操作 用SparseLU来进行矩阵方程的求解。用compute(A)来设置系数矩阵A，solve(B)来求解。 用JacobiSVD实现极分解，求解对应的旋转矩阵。要求的旋转矩阵便是U*V.transpose()。其中U是分解出来的前一个矩阵，V是分解出来的后一个矩阵  3 实验结果 &emsp;&emsp;基本重现了论文中的形变，包括长条、花、人和马的形变。像马这种有复杂形状的鬃毛和尾巴的图形也可以进行良好的形变。（以下的形变都是在考虑了Curve Laplacian Coordinates、Mean Value Coordinates、Edge Lengths以及Global Area进行计算的）
+ 图一 &ldquo;p&rdquo;的变形 
+ 图二 花的变形 
+ 图三 一个人的变形 
+ 图四 马的变形 
+4 总结与分析 &emsp;&emsp;项目中，M即为GL，H与C合并为C。Gauss-Newton method的迭代通过start solve来实现。
+&emsp;&emsp;见图五，对于二维图，在没有加入内部顶点的约束的时候，形变会比较奇怪，更像是在维持多边形的局部特征的前提下，多边形分为两块在进行相对的运动。而不像是右图，进行了图形的旋转。原因应该是在没有内部顶点的约束下，第一种形变的能量已经足够低，因此从能量函数上看，已经是一个优秀的结果了。
+ 图五 左边的没有内部顶点约束，右边有内部顶点的约束 
+&emsp;&emsp;加入内部顶点的约束，以及面积的约束之后，形变确实看上去更加合理了。
+&emsp;&emsp;面积约束理解的还不够透彻，需要再深入的理解。"/>
+
+    <meta property="og:title" content="Week 2 Report" />
+<meta property="og:description" content="报告 2019/8/29/ 23：15
+1 总述 &emsp;&emsp;这几周主要根据论文内容，将原2D Deformation项目的代码进行了修改，删除不可用的第三方包（包括zjucad、hjlib等），代之以矩阵库Eigen，并最终在Win10&#43;vs2017环境下成功运行，运行效果符合个人预期。
+2 详细工作  用Eigen库里的MatrixXd替换了所有的matrix&lt;double&gt;，用SparseMatrix&lt;double&gt;替换了sparse_matrix&lt;double&gt;，并且将所有的函数操作都修改成符合Eigen库的函数操作 用SparseLU来进行矩阵方程的求解。用compute(A)来设置系数矩阵A，solve(B)来求解。 用JacobiSVD实现极分解，求解对应的旋转矩阵。要求的旋转矩阵便是U*V.transpose()。其中U是分解出来的前一个矩阵，V是分解出来的后一个矩阵  3 实验结果 &emsp;&emsp;基本重现了论文中的形变，包括长条、花、人和马的形变。像马这种有复杂形状的鬃毛和尾巴的图形也可以进行良好的形变。（以下的形变都是在考虑了Curve Laplacian Coordinates、Mean Value Coordinates、Edge Lengths以及Global Area进行计算的）
+ 图一 &ldquo;p&rdquo;的变形 
+ 图二 花的变形 
+ 图三 一个人的变形 
+ 图四 马的变形 
+4 总结与分析 &emsp;&emsp;项目中，M即为GL，H与C合并为C。Gauss-Newton method的迭代通过start solve来实现。
+&emsp;&emsp;见图五，对于二维图，在没有加入内部顶点的约束的时候，形变会比较奇怪，更像是在维持多边形的局部特征的前提下，多边形分为两块在进行相对的运动。而不像是右图，进行了图形的旋转。原因应该是在没有内部顶点的约束下，第一种形变的能量已经足够低，因此从能量函数上看，已经是一个优秀的结果了。
+ 图五 左边的没有内部顶点约束，右边有内部顶点的约束 
+&emsp;&emsp;加入内部顶点的约束，以及面积的约束之后，形变确实看上去更加合理了。
+&emsp;&emsp;面积约束理解的还不够透彻，需要再深入的理解。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thyzju17.github.io/post/19830report/" />
+<meta property="article:published_time" content="2019-08-30T11:20:25+08:00" />
+<meta property="article:modified_time" content="2019-08-30T11:20:25+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://thyzju17.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>THY</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Week 2 Report</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 30, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://thyzju17.github.io/tags/srtp/">SRTP</a><a class="tag" href="https://thyzju17.github.io/tags/report/">report</a></div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h2 id="报告">报告</h2>
+
+<p>2019/8/29/ 23：15</p>
+
+<h4 id="1-总述">1 总述</h4>
+
+<p>&emsp;&emsp;这几周主要根据论文内容，将原2D Deformation项目的代码进行了修改，删除不可用的第三方包（包括zjucad、hjlib等），代之以矩阵库Eigen，并最终在Win10+vs2017环境下成功运行，运行效果符合个人预期。</p>
+
+<h4 id="2-详细工作">2 详细工作</h4>
+
+<ol>
+<li>用Eigen库里的MatrixXd替换了所有的matrix&lt;double&gt;，用SparseMatrix&lt;double&gt;替换了sparse_matrix&lt;double&gt;，并且将所有的函数操作都修改成符合Eigen库的函数操作</li>
+<li>用SparseLU来进行矩阵方程的求解。用compute(A)来设置系数矩阵A，solve(B)来求解。</li>
+<li>用JacobiSVD实现极分解，求解对应的旋转矩阵。要求的旋转矩阵便是U*V.transpose()。其中U是分解出来的前一个矩阵，V是分解出来的后一个矩阵</li>
+</ol>
+
+<h4 id="3-实验结果">3 实验结果</h4>
+
+<p>&emsp;&emsp;基本重现了论文中的形变，包括长条、花、人和马的形变。像马这种有复杂形状的鬃毛和尾巴的图形也可以进行良好的形变。（以下的形变都是在考虑了Curve Laplacian Coordinates、Mean Value Coordinates、Edge Lengths以及Global Area进行计算的）</p>
+
+<p><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="/image/19830report/pA.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图一 &ldquo;p&rdquo;的变形</div>
+</center></p>
+
+<p><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="/image/19830report/flower2all.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图二 花的变形</div>
+</center></p>
+
+<p><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="/image/19830report/man3all.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图三 一个人的变形</div>
+</center></p>
+
+<p><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="/image/19830report/horseall.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图四 马的变形</div>
+</center></p>
+
+<h4 id="4-总结与分析">4 总结与分析</h4>
+
+<p>&emsp;&emsp;项目中，M即为GL，H与C合并为C。Gauss-Newton method的迭代通过start solve来实现。</p>
+
+<p>&emsp;&emsp;见图五，对于二维图，在没有加入内部顶点的约束的时候，形变会比较奇怪，更像是在维持多边形的局部特征的前提下，多边形分为两块在进行相对的运动。而不像是右图，进行了图形的旋转。原因应该是在没有内部顶点的约束下，第一种形变的能量已经足够低，因此从能量函数上看，已经是一个优秀的结果了。</p>
+
+<p><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="/image/19830report/bearall.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图五 左边的没有内部顶点约束，右边有内部顶点的约束</div>
+</center></p>
+
+<p>&emsp;&emsp;加入内部顶点的约束，以及面积的约束之后，形变确实看上去更加合理了。</p>
+
+<p>&emsp;&emsp;面积约束理解的还不够透彻，需要再深入的理解。</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
