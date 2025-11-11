@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="descriptions">
+  <meta name="keywords" content="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mimic-X</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <!-- <meta name="google-site-verification" content="DM3NGsK5CfRuZPtync3hP0EUCJJb_oFfAl_czOaK-PE" /> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/glab.css">
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="js/dics/dics.original.css">
+  <script src="js/dics/dics.original.js"></script>
+  <script src="js/event_handler.js"></script> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:300,400,500,600,700" rel="stylesheet"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <!-- <script src="./static/js/bulma-slider.min.js"></script> -->
+  <!-- <script src="./static/js/index.js"></script> -->
+  <script src="./static/js/slides.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body" style="padding-bottom: 0;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <!-- <h1 class="title is-1 publication-title" style="font-size: 30px; font-weight: bold">
+            
+          </h1> -->
+          <h2 class="title is-3">Mimic-X: a large-scale motion dataset via fast physics-based controller adaptation</h2>
+          <h2 class="conference">AAAI 2026</h2>
+          <div class="is-size-6 publication-authors" style="width: 65%; margin: 0 auto; text-align: center;">
+            <span class="author-block">
+              <a href="">Hongyu Tao</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://houericsy.github.io/ShuaiyingHou/">Shuaiying Hou</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Junheng Fang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="">Mingyao Shi</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://www.cad.zju.edu.cn/home/weiweixu/index.htm">Weiwei Xu</a><sup>1*</sup>
+            </span>
+          </div>
+
+
+          <div class="is-size-6 publication-authors" style="width: 70%; margin: 0 auto; text-align: center;">
+            <span class="author-block"><sup>1</sup> <img src="./static/images/logo/zju1.jpg" alt="icon" style="height: 1em; vertical-align: middle;"> Zhejiang University, </span>
+            <span class="author-block"><sup>2</sup> <img src="./static/images/logo/zstu1.png" alt="icon" style="height: 1em; vertical-align: middle;"> Zhejiang Sci-Tech University </span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup>Corresponding author</span>
+          </div>
+          <br/>
+          <!-- <img src="static/images/univ_logo.jpg" class="univ_logo"> -->
+          <div class="columns is-centered"   style="margin-top: -20px; margin-bottom: -30px;">
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="./sig25_4dgv_author.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./sig25_4dgv_author_supp.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supp.</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/2404.17774"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/turandai/4d_gaussian_video"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                    </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span>
+                    <span>Data (coming soon)</span>
+                    </a>
+                </span>
+
+              </div>
+
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+
+    <div class="columns is-centered"> <img src="static/images/teaser_aaai.pdf"> </div>
+    
+    <br/>
+    <h2 class="title is-4">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Large and high-quality motion datasets are essential for advancing human motion modeling. However, limitations of existing motion datasets, such as insufficient scale or inadequate quality, significantly hinder the progress of this field. To address these limitations, we introduce Mimic-X, a large-scale (52 hours), physically plausible 3D human motion dataset. To construct Mimic-X, we develop an adaptive option framework that controls a physically simulated character to imitate low-quality motions extracted from a vast collection of online videos. Specifically, we first apply hierarchical clustering to group motions into clusters, and then train option policies to mimic motions sampled from these clusters. Considering the noisy nature of low-quality motions, we utilize a separate encoder for each cluster to map the noisy motions within the cluster into a compact latent space. This significantly enhances the quality of the imitated motions while accelerating the learning process. Subsequently, we employ dynamic programming as a meta-policy to efficiently organize the option policies to generate complete motion clips. Finally, we perform fine-tuning to each motion sequence to further refine motion quality. The proposed adaptive option framework outperforms state-of-the-art human motion recovery methods across various evaluation metrics, demonstrating that motions in Mimic-X exhibit higher quality and greater physical plausibility. Furthermore, experimental results show that Mimic-X enhances the performance of motion generation methods, verifying its effectiveness for motion modeling tasks.
+      </p>
+    </div>
+    <br/>
+
+    <!-- <h2 class="title is-4">Web Player</h2>
+    <div class="content has-text-justified">
+      <p>
+        xxx
+      </p>
+    </div> -->
+    <!-- <video autoplay muted loop playsinline height="10%">
+      <source src="./static/videos/result_dtu.mp4"
+              type="video/mp4">
+    </video> -->
+
+
+
+    <h2 class="title is-4">Accompanying video</h2>
+    <div class="content has-text-justified">
+      <p>
+        Demos included in the main paper can be found in the following.
+      </p>
+    </div>
+    <div style="overflow: hidden; width: 100%; aspect-ratio: 16 / 9;">
+      <video id="ref_demo" src="./static/videos/MimicX_aaai_compressed.mp4" width="100%" autoplay controls loop muted playsinline></video>
+    </div>
+    
+    <br/>
+    <br/>
+    <h2 class="title is-4">Overview</h2>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolation</h3> -->
+        <div class="content has-text-justified">
+          <!-- <p>
+            xxx
+          </p> -->
+
+            <img src="static/images/pipeline.pdf">
+  
+            <div class="content has-text-justified">
+              <p>
+                <span style="font-weight: bold;">System overview. </span>
+                Our system comprises three main steps: preprocessing, pre-training, and adaptation. 
+                <b><span style="color: rgb(127, 127, 127);">In the preprocessing</span></b>, we extract kinematic motion data from videos, resulting in a low-quality motion dataset. 
+                <b><span style="color: rgb(176, 36, 24);">During the pre-train step</span></b>, we apply hierarchical clustering to group the low-quality dataset into several clusters, and train option policies to mimic motions sampled from the clusters using deep reinforcement learning. 
+                <b><span style="color: rgb(63, 86, 42);">Finally, in the adaptation step</span></b>, an option selector arranges the option policies to mimic the reference motion. After fine-tuning for several minutes, we obtain high-quality simulated motions.
+                
+              </p>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <br/>
+    <h2 class="title is-4">Generation comparisons</h2>
+    <div class="content has-text-justified">
+      <p>
+        Generated results from T2M-GPT, T2M-GPT-Motion-X, and T2M-GPT-Mimic-X.
+      </p>
+    </div>
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+
+          <div class="columns is-centered is-mobile">
+
+            <div class="column is-full-width">
+              <div id="motion0" class="bal-container-small">
+              
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <video id="video00" autoplay muted loop playsinline style="width: 120%; height: 120%; object-fit: cover">
+                      <source src="./static/videos/motion/dominos_ours.mp4" type="video/mp4">
+                    </video>
+                    <div class="bal-beforePosition beforeLabel">
+                      <span style="font-weight: bold;">RGB</span><div></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="bal-after">
+                  <video id="video01" autoplay muted loop playsinline style="width: 120%; height: 120%; object-fit: cover">
+                    <source src="./static/videos/motion/dominos_ours_motion.mp4" type="video/mp4">
+                  </video>
+                  <div class="bal-afterPosition afterLabel">
+                    <span style="font-weight: bold;">Motion Label</span><div></div>
+                  </div>
+                </div>
+
+                <div class="bal-handle">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+                
+
+              </div>
+
+            </div>
+
+            <div class="column is-full-width">
+              <div id="motion1" class="bal-container-small">
+              
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <video id="video10" autoplay muted loop playsinline height="10%" style="width: 100%; height: 100%; object-fit: cover">
+                      <source src="./static/videos/motion/bar_ours.mp4" type="video/mp4">
+                    </video>
+                    <div class="bal-beforePosition beforeLabel">
+                      <span style="font-weight: bold;">RGB</span><div></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="bal-after">
+                  <video id="video11" autoplay muted loop playsinline height="10%" style="width: 100%; height: 100%; object-fit: cover">
+                    <source src="./static/videos/motion/bar_ours_motion.mp4" type="video/mp4">
+                  </video>
+                  <div class="bal-afterPosition afterLabel">
+                    <span style="font-weight: bold;">Motion Label</span><div></div>
+                  </div>
+                </div>
+
+                <div class="bal-handle">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+                
+
+              </div>
+
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+      
+    </div> -->
+    <br/>
+
+    
+    <!-- <h2 class="title is-4">Comparison</h2> -->
+    <!-- <div class="content has-text-justified">
+      <p>
+        Video comparisons on public datasets (more results <a href="https://www.bilibili.com/video/BV1BXjtzBEQh/">here</a>).
+      </p>
+    </div> -->
+
+    <!-- <div class="slideshow-container">
+
+      <div class="mySlides0 fade">
+        <video data-src="./static/videos/compare/theater_cmp.mp4" autoplay muted playsinline style="transform: scale(1.1);"></video>
+      </div>
+      <div class="mySlides0 fade">
+        <video data-src="./static/videos/compare/vrheadset_cmp.mp4" autoplay muted playsinline style="transform: scale(1.1);"></video>
+      </div>
+      <div class="mySlides0 fade">
+        <video data-src="./static/videos/compare/birthday_cmp.mp4" autoplay muted playsinline style="transform: scale(1.1);"></video>
+      </div>
+      <div class="mySlides0 fade">
+        <video data-src="./static/videos/compare/reading_cmp.mp4" autoplay muted playsinline style="transform: scale(1.1);"></video>
+      </div>
+      <div class="mySlides0 fade">
+        <video data-src="./static/videos/compare/stepin_cmp.mp4" autoplay muted playsinline style="transform: scale(1.1);"></video>
+      </div>
+    
+      <a class="prev" onclick="plusSlides(0, -1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(0, 1)">&#10095;</a>
+
+      <div style="text-align:center; margin-top: 0px;">
+        <span class="dot0" onclick="currentSlide(0, 1)"></span>
+        <span class="dot0" onclick="currentSlide(0, 2)"></span>
+        <span class="dot0" onclick="currentSlide(0, 3)"></span>
+        <span class="dot0" onclick="currentSlide(0, 4)"></span>
+        <span class="dot0" onclick="currentSlide(0, 5)"></span>
+      </div>
+    </div> -->
+
+
+
+    
+    <br/>
+
+    <!-- related work-->
+    <!-- <h2 class="title is-4">Related Work</h2>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <div class="content has-text-justified">
+          <p style="font-size: 90%;">
+            <a href="https://ingra14m.github.io/Deformable-Gaussians/">[Yang et al. 2024]</a> Deformable 3D Gaussians for High-Fidelity Monocular Dynamic Scene Reconstruction.
+          </p> 
+          <p style="font-size: 90%;">
+            <a href="https://fudan-zvg.github.io/4d-gaussian-splatting/">[Yang et al. 2024]</a> Real-time Photorealistic Dynamic Scene Representation and Rendering with 4D Gaussian Splatting.
+          </p> 
+          <p style="font-size: 90%;">
+            <a href="https://sjojok.top/3dgstream/">[Sun et al. 2024]</a> 3DGStream: On-the-Fly Training of 3D Gaussians for Efficient Streaming of Photo-Realistic Free-Viewpoint Videos.
+          </p> 
+          <p style="font-size: 90%;">
+            <a href="https://jiaweixu8.github.io/Grid4D-web/">[Xu et al. 2024]</a> Grid4D: 4D Decomposed Hash Encoding for High-Fidelity Dynamic Gaussian Splatting.
+          </p> 
+          <p style="font-size: 90%;">
+            <a href="https://oppo-us-research.github.io/SpacetimeGaussians-website/">[Li et al. 2024]</a> Spacetime Gaussian Feature Splatting for Real-Time Dynamic View Synthesis.
+          </p> 
+          <p style="font-size: 90%;">
+            <a href="https://leejunoh.com/Ex4DGS/">[Lee et al. 2024]</a> Fully Explicit Dynamic Gaussian Splatting.
+          </p> 
+          <p style="font-size: 90%;">
+            <a href="https://authoritywang.github.io/v3/">[Wang et al. 2024]</a> V<sup>3</sup>: Viewing Volumetric Videos on Mobiles via Streamable 2D Dynamic Gaussians.
+          </p> 
+          <p style="font-size: 90%;">
+            <a href="https://zju3dv.github.io/longvolcap/">[Xu et al. 2024]</a> Representing Long Volumetric Video with Temporal Gaussian Hierarchy.
+          </p> 
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-4">BibTeX</h2>
+    <pre><code>
+    @article{,
+      author = {},
+      title = {},
+    }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+        <p>
+          This page is modified from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> template.
+        </p>
+    </div>
+  </div>
+</footer>
+
+<script src="static/js/script.js"></script>
+<script>
+    new BeforeAfter({
+        id: '#motion0'
+    });
+    new BeforeAfter({
+        id: '#motion1'
+    });
+    new BeforeAfter({
+        id: '#motion2'
+    });
+    new BeforeAfter({
+        id: '#motion3'
+    });
+    // new BeforeAfter({
+    //     id: '#compare4'
+    // });
+    // new BeforeAfter({
+    //     id: '#compare5'
+    // });
+    // new BeforeAfter({
+    //     id: '#compare6'
+    // });
+    // new BeforeAfter({
+    //     id: '#compare7'
+    // });
+    // new BeforeAfter({
+    //     id: '#compare8'
+    // });
+    // new BeforeAfter({
+    //     id: '#compare9'
+    // });
+    const video00 = document.getElementById("video00");
+    const video01 = document.getElementById("video01");
+    // Synchronize video start time
+    video00.onplay = () => {
+      if (video01.paused) {
+        video01.currentTime = video00.currentTime; // Align start time
+        video01.play(); // Play the second video when the first one starts
+      }
+    };
+    // Synchronize video pause and playback
+    video00.ontimeupdate = () => {
+      if (Math.abs(video00.currentTime - video01.currentTime) > 0.1) {
+        video01.currentTime = video00.currentTime; // Align the current time to keep them in sync
+      }
+    };
+
+    const video10 = document.getElementById("video10");
+    const video11 = document.getElementById("video11");
+    // Synchronize video start time
+    video10.onplay = () => {
+      if (video11.paused) {
+        video11.currentTime = video10.currentTime; // Align start time
+        video11.play(); // Play the second video when the first one starts
+      }
+    };
+    // Synchronize video pause and playback
+    video10.ontimeupdate = () => {
+      if (Math.abs(video10.currentTime - video11.currentTime) > 0.1) {
+        video11.currentTime = video10.currentTime; // Align the current time to keep them in sync
+      }
+    };
+
+
+    
+</script>
+
+<script>
+  showSlides(0, 1)
+  // showSlides(1, 1)
+  changevideo("./static/videos/long/cube_long.mp4", 1)
+</script>
+
+</body>
+</html>
